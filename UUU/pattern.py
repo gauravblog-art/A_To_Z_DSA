@@ -1,4 +1,6 @@
-n=5
+n=int(input())
+
+print(n)
 for i in range(n):
     for j in range(n):
         print("*", end="")
@@ -69,6 +71,106 @@ for i in range(n):
 for i in range(n):
     for j in range(i-1+2):
         print("", end=" ")
-    for j in range(n*2-1-i*2-1):
+    for j in range(n*2-1-i*2):
         print("*", end="")
     print()
+
+print("===========")
+
+k=1
+for i in range(n):
+    for j in range(i+1):
+        print(k, end=" ")
+        k+=1
+    print()
+
+print("=============")
+
+def numtochr(num):
+    return chr(num+65)
+
+for i in range(n):
+    for j in range(i+1):
+        print(numtochr(j), end="")
+    print()
+
+print("=============")
+# ABCDE
+# ABCD
+# ABC
+# AB
+# A
+for i in range(n):
+    for j in range(n-i):
+        print(numtochr(j), end="")
+    print()
+print("=========")
+# A
+# BB
+# CCC
+# DDDD
+# EEEEE
+for i in range(n):
+    for j in range(i+1):
+        print(numtochr(i), end="")
+    print()
+
+print("===========")
+#    A
+#   ABA
+#  ABCBA
+# ABCDCBA
+for i in range(n-1):
+    for j in range(n-i-2):
+        print(" ", end="")
+    for j in range(i+1):
+        print(numtochr(j), end="")
+    for k in range(i-1, -1, -1):
+        print(numtochr(k), end="")
+    print()
+
+print("===============")
+# E
+# DE
+# CDE
+# BCDE
+# ABCDE
+k=n-1
+for i in range(n):
+    for j in range(i+1):
+        print(numtochr(k+j), end="")
+    k-=1
+    print()
+
+print("=================")
+# **********
+# ****  ****
+# ***    ***
+# **      **
+# *        *
+# *        *
+# **      **
+# ***    ***
+# ****  ****
+# **********
+for i in range(n):
+    for j in range(n-i):
+        print("*", end="")
+    for j in range(i):
+        print(" ", end=" ")
+    for j in range(n-i):
+        print("*", end="")
+    print()
+
+for i in range(n):
+    for j in range(i+1):
+        print("*", end="")
+    
+    for j in range(n-i-1):
+        print(" ", end=" ")
+    for j in range(i+1):
+        print("*", end="")
+    print()
+    
+    
+
